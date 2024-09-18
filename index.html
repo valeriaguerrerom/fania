@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clandestino - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado con logo y navegación -->
+    <header>
+        <div id="header"></div>
+        <script>
+        // Cargar el contenido de header.html dentro del div con id="header"
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+        </script>
+
+    </header> 
+
+    <!-- Banner principal -->
+    <section id="banner-principal">
+        <div class="banner-content">
+            <h1>Bienvenido a Clandestino</h1>
+            <p>Descubre una experiencia única en nuestro bar, con cocteles exclusivos y el mejor ambiente.</p>
+        </div>
+    </section>
+
+<!-- Carrusel personalizado -->
+<div class="carousel">
+    <div class="slides">
+        <div class="slide active">
+            <img src="img/slide1.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="img/slide2.png" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="img/slide3.png" alt="Slide 3">
+        </div>
+    </div>
+    <!-- Botones para navegar -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<!-- Indicadores de diapositivas -->
+<div class="indicators">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<!-- JavaScript para controlar el carrusel -->
+<script>
+    let currentIndex = 0;
+    showSlide(currentIndex);
+
+    function moveSlide(step) {
+        currentIndex += step;
+        showSlide(currentIndex);
+    }
+
+    function currentSlide(n) {
+        currentIndex = n - 1;
+        showSlide(currentIndex);
+    }
+
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        if (n >= slides.length) currentIndex = 0; // Reinicia si supera la última slide
+        if (n < 0) currentIndex = slides.length - 1; // Vuelve a la última si es negativo
+
+        // Ocultar todas las diapositivas
+        slides.forEach(slide => slide.style.display = 'none');
+        // Remover la clase activa de los puntos
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Mostrar la diapositiva actual y activar el punto correspondiente
+        slides[currentIndex].style.display = 'block';
+        dots[currentIndex].classList.add('active');
+    }
+
+    // Cambio automático de diapositivas cada 3 segundos
+    setInterval(() => moveSlide(1), 3000);
+</script>
+
+
+    <!-- Sección de productos destacados -->
+    <section id="productos-destacados">
+        <h2>Nuestros Productos Destacados</h2>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="img/narino-azul.webp" alt="Aguardiente Nariño Botella">
+                <p>Aguardiente Nariño Botella - $35,000</p>
+            </div>
+            <div class="producto">
+                <img src="img/pokeron.webp" alt="Pokerón">
+                <p>Pokerón - $10,000</p>
+            </div>
+            <div class="producto">
+                <img src="img/budweiser.png" alt="Budweiser">
+                <p>Budweiser - $8,000</p>
+            </div>
+            <div class="producto">
+                <img src="img/smirnoff-ice.webp" alt="Smirnoff Ice">
+                <p>Smirnoff Ice - $12,000</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Clandestino. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

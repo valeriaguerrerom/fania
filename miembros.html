@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clandestino - Miembros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="header"></div>
+        <script>
+        // Cargar el contenido de header.html dentro del div con id="header"
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+        </script>
+    </header>
+
+    <section id="miembros">
+        <h1>Miembros de Clandestino</h1>
+        <p>Bienvenidos a la base de datos de miembros de Clandestino. Aquí puedes ver la información de los clientes que han visitado nuestro bar, y mediante operadores de comparación realizaremos un análisis de sus preferencias para mejorar nuestro marketing.</p>
+
+        <!-- Lugar donde insertarás la imagen de la base de datos -->
+        <div class="database-image">
+            <!-- Inserta tu imagen aquí -->
+            <img src="img/database.png" alt="Base de Datos de Miembros">
+        </div>
+
+        <!-- A continuación, irán las operaciones y sus resultados -->
+        <h2>Estudio de mercado mediante operadores de comparación</h2>
+        <p>Aquí utilizamos varias consultas para analizar la información de nuestros clientes y optimizar futuras estrategias de marketing.</p>
+    </section>
+</body>
+</html>
+       <!-- Consulta 1 -->
+       <div class="consulta">
+        <h3>Consulta 1: Encontrar a miembros con 20 años</h3>
+        <p><strong>Operación:</strong> `db.clandestino.find({ edad: {$eq:20} });`</p>
+        <p><strong>Justificación:</strong> Con esta consulta buscamos identificar a los miembros de 20 años, lo cual nos permite entender las preferencias de los jóvenes y planificar ofertas para atraer a más clientes de este rango de edad. Saber sus gustos es crucial para ofrecer promociones que resuenen con sus intereses y así fidelizarlos como clientes habituales.</p>
+
+        <!-- Mostrar los resultados de la consulta como imágenes -->
+        <div class="resultados">
+            <div class="imagenes-resultados">
+                <img src="img/consulta1_result1.png" alt="Resultado de la consulta 1 - Imagen 1" class="resultado-imagen">
+                <img src="img/consulta1_result2.png" alt="Resultado de la consulta 1 - Imagen 2" class="resultado-imagen">
+            </div>
+        </div>
+
+        <h4>Análisis del Resultado:</h4>
+        <p>Encontramos dos miembros que tienen 20 años:</p>
+        <ul>
+            <li><strong>Luisa:</strong> Ingeniera química con 18 visitas al bar, disfruta de bebidas accesibles como Cerveza y Pokeron.</li>
+            <li><strong>Juan:</strong> Ingeniero civil con 40 visitas, prefiere bebidas premium como Whisky y Gin Tonic.</li>
+        </ul>
+        <p>Este análisis sugiere que dentro del público joven hay dos tipos de clientes: aquellos que buscan una experiencia más accesible y relajada, y aquellos que prefieren una experiencia más exclusiva. Esto indica que deberíamos diversificar nuestras promociones para satisfacer a ambos segmentos, ofreciendo tanto bebidas premium como más accesibles.</p>
+    </div>
+    <div class="consulta">
+        <h3>Consulta 2: Encontrar miembro con nombre "Ancizar"</h3>
+        <p><strong>Operación:</strong> `db.clandestino.find({ nombre: {$eq: "Ancizar"} });`</p>
+        <p><strong>Justificación:</strong> Identificar a miembros específicos por su nombre ayuda a ofrecer promociones personalizadas, mejorando la experiencia del cliente.</p>
+        <div class="resultados">
+            <div class="imagenes-resultados">
+                <img src="img/consulta2_result.png" alt="Resultado de la consulta 2 - Imagen 1" class="resultado-imagen">
+            </div>
+        </div>
+        <h4>Análisis del Resultado:</h4>
+        <p>Se encontró al miembro Ancizar, un cliente de 19 años que tiene preferencias por cervezas y ron. Dado su perfil, podríamos enviarle promociones de estos productos para aumentar su número de visitas.</p>
+    </div>
+    <!-- Consulta 3 -->
+<div class="consulta">
+    <h3>Consulta 3: Encontrar miembros con edad mayor a 40 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ edad: { $gt: 40 } });`</p>
+    <p><strong>Justificación:</strong> Conocer a los clientes mayores de 40 años permite identificar un segmento con poder adquisitivo y preferencias más sofisticadas en cuanto a bebidas premium y servicios exclusivos.</p>
+    
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta3_result1.png" alt="Resultado de la consulta 3 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta3_result2.png" alt="Resultado de la consulta 3 - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta3_result3.png" alt="Resultado de la consulta 3 - Imagen 3" class="resultado-imagen">
+            <img src="img/consulta3_result4.png" alt="Resultado de la consulta 3 - Imagen 4" class="resultado-imagen">
+        </div>
+    </div>
+
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 4 clientes mayores de 40 años: Lucía, Andrés, Vicente y Gustavo. Todos ellos prefieren bebidas premium como Gin Tonic, Whisky y Tequila, lo que sugiere la necesidad de diseñar promociones exclusivas para este segmento, con bebidas premium y eventos especiales orientados a un público más maduro.</p>
+</div>
+
+    <div class="consulta">
+        <h3>Consulta 4: Clientes de más de 40 años que no son VIP</h3>
+        <p><strong>Operación:</strong> `db.clandestino.find({ _edad: {$gt: 40}, _es_vip: {$eq: false} });`</p>
+        <p><strong>Justificación:</strong> Atraer a los clientes mayores de 40 años que aún no son VIP con promociones especiales. Esto podría ayudarnos a convertirlos en clientes exclusivos.</p>
+        <div class="resultados">
+            <div class="imagenes-resultados">
+                <img src="img/consulta4_result1.png" alt="Resultado de la consulta 4 - Imagen 1" class="resultado-imagen">
+            </div>
+        </div>
+        <h4>Análisis del Resultado:</h4>
+        <p>Se identificó un cliente que cumple con los criterios de la consulta: tiene más de 40 años y no son VIP. Este cliente representa una oportunidad para implementar estrategias de fidelización que los conviertan en miembros VIP mediante promociones de bebidas exclusivas o eventos especiales.</p>
+    </div>
+    <div class="consulta">
+<!-- Consulta 5 -->
+<div class="consulta">
+    <h3>Consulta 5: Clientes menores de 25 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: {$lt: 25} });`</p>
+    <p><strong>Justificación:</strong> Comprender el comportamiento de los clientes más jóvenes nos permite ofrecer promociones y eventos que atraigan a este grupo, como happy hours o eventos juveniles.</p>
+    
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta5_result1.png" alt="Resultado de la consulta 5 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta5_result2.png" alt="Resultado de la consulta 5 - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta5_result3.png" alt="Resultado de la consulta 5 - Imagen 3" class="resultado-imagen">
+            <img src="img/consulta5_result4.png" alt="Resultado de la consulta 5 - Imagen 4" class="resultado-imagen">
+            <img src="img/consulta5_result5.png" alt="Resultado de la consulta 5 - Imagen 5" class="resultado-imagen">
+            <img src="img/consulta5_result6.png" alt="Resultado de la consulta 5 - Imagen 6" class="resultado-imagen">
+            <img src="img/consulta5_result7.png" alt="Resultado de la consulta 5 - Imagen 7" class="resultado-imagen">
+        </div>
+    </div>
+
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 7 clientes menores de 25 años. Este grupo de jóvenes es ideal para promociones como eventos juveniles, happy hours, y descuentos en bebidas que prefieren. Implementar estrategias de marketing dirigidas a estos clientes puede aumentar su frecuencia de visitas y captar más jóvenes hacia el bar.</p>
+</div>
+
+<div class="consulta">
+    <h3>Consulta 6: Clientes que prefieren "Caipirinha"</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _bebidas_preferidas: {$eq: 'Caipirinha'} });`</p>
+    <p><strong>Justificación:</strong> Identificar las preferencias de bebidas de los clientes permite optimizar la oferta. Al saber qué clientes prefieren "Caipirinha", podemos mejorar la oferta de esta bebida o crear promociones específicas relacionadas con ella.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta6_result1.png" alt="Resultado de la consulta 6 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta6_result2.png" alt="Resultado de la consulta 6 - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta6_result3.png" alt="Resultado de la consulta 6 - Imagen 3" class="resultado-imagen">
+            <img src="img/consulta6_result4.png" alt="Resultado de la consulta 6 - Imagen 4" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 4 clientes que prefieren "Caipirinha". Esto sugiere que hay un grupo pequeño pero significativo de personas que disfrutan de esta bebida. Se podría aumentar su presencia en la carta de cocteles y ofrecer promociones para captar más clientes interesados en este tipo de cocteles.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 7: Clientes mayores de 40 años que no son VIP</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: {$gt: 40}, _es_vip: {$eq: false} })`</p>
+    <p><strong>Justificación:</strong> Saber quiénes son los clientes mayores de 40 años que no son VIP ayuda a crear estrategias de fidelización dirigidas a este grupo. Al identificar este perfil, se podrían ofrecer promociones para convertirlos en clientes VIP.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta7_result1.png" alt="Resultado de la consulta 7 - Imagen 1" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontró un cliente mayor de 40 años que no es VIP. Este cliente podría ser incentivado a convertirse en VIP con promociones exclusivas, lo que aumentaría su lealtad y posiblemente el número de visitas al bar.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 8: Clientes de la ciudad de Cartagena</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _ciudad: {$eq: 'Cartagena'} })`</p>
+    <p><strong>Justificación:</strong> Conocer la procedencia de los clientes ayuda a crear promociones regionales, en este caso para los clientes de Cartagena. Esto permite dirigir campañas específicas o incluso eventos en su ciudad.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta8_result1.png" alt="Resultado de la consulta 8 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta8_result2.png" alt="Resultado de la consulta 8 - Imagen 2" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron dos clientes provenientes de Cartagena. A partir de esta información, se pueden diseñar campañas regionales para ofrecer promociones y eventos especiales dirigidos a la clientela de esta ciudad, lo cual podría aumentar su participación y lealtad.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 9: Clientes con más de 45 visitas</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _numero_visitas: {$gt: 45} })`</p>
+    <p><strong>Justificación:</strong> Analizar a los clientes más frecuentes para premiarlos y mantener su lealtad.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta9_result1.png" alt="Resultado de la consulta 9 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta9_result2.png" alt="Resultado de la consulta 9 - Imagen 2" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron dos clientes con más de 45 visitas. Estos clientes deberían recibir recompensas especiales o ser invitados a eventos exclusivos, lo cual ayudaría a retener su lealtad y promover más visitas.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 10: Clientes de 20 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: {$eq: 20} })`</p>
+    <p><strong>Justificación:</strong> Conocer a los clientes de 20 años nos permite desarrollar estrategias dirigidas a un público joven, generando promociones o eventos específicos para atraer y retener a este grupo de clientes.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta10_result1.png" alt="Resultado de la consulta - Cliente 1" class="resultado-imagen">
+            <img src="img/consulta10_result2.png" alt="Resultado de la consulta - Cliente 2" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>En esta consulta se identificaron 2 clientes de 20 años. Este grupo representa un segmento joven que puede ser influenciado mediante eventos como "happy hours" o descuentos en bebidas populares entre jóvenes como la cerveza o los cocteles. Además, estos clientes suelen preferir ambientes dinámicos y con música moderna, lo cual podría atraer a más jóvenes de su edad.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 11: Clientes con menos de 10 visitas</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _numero_visitas: {$lt: 10} })`</p>
+    <p><strong>Justificación:</strong> Identificar a los clientes que han visitado menos de 10 veces el bar nos permite implementar estrategias para aumentar su frecuencia de visitas, como promociones especiales para nuevos visitantes.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta11_result1.png" alt="Resultado de la consulta - Cliente 1" class="resultado-imagen">
+            <img src="img/consulta11_result2.png" alt="Resultado de la consulta - Cliente 2" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 2 clientes que han visitado menos de 10 veces. Estos clientes son potenciales para estrategias de retención mediante cupones de descuento, eventos especiales o invitaciones a promociones exclusivas. Es importante fidelizar a estos clientes para incrementar su frecuencia de visitas.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 12: Clientes con la ocupación "Ingeniero civil"</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _ocupacion: {$regex: 'Ingeniero civil'} });`</p>
+    <p><strong>Justificación:</strong> Identificar los clientes que se dedican a la ingeniería civil ayuda a comprender sus preferencias y ofrecer promociones o eventos que puedan atraer a más personas con un perfil técnico.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta12_result1.png" alt="Resultado 1 - Ingeniero civil" class="resultado-imagen">
+            <img src="img/consulta12_result2.png" alt="Resultado 2 - Ingeniero civil" class="resultado-imagen">
+            <img src="img/consulta12_result3.png" alt="Resultado 3 - Ingeniero civil" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 3 clientes con la ocupación "Ingeniero civil", lo que permite diseñar ofertas específicas para este segmento profesional. Las preferencias en bebidas de estos ingenieros incluyen tequila, cerveza y whisky, lo que sugiere la posibilidad de ofrecer promociones relacionadas con estas bebidas durante eventos técnicos o encuentros profesionales.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 13: Clientes menores de 23 años que no prefieren "Cerveza"</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: {$lt: 23}, _bebidas_preferidas: {$nin: ['Cerveza']} });`</p>
+    <p><strong>Justificación:</strong> Identificar a los clientes jóvenes que no prefieren cerveza permite ofrecer bebidas alternativas como cócteles y licores más atractivos para este grupo demográfico.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta13_result2.png" alt="Resultado 2 - Menores de 23 sin cerveza" class="resultado-imagen">
+            <img src="img/consulta13_result4.png" alt="Resultado 4 - Menores de 23 sin cerveza" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 4 clientes menores de 23 años que no prefieren cerveza. Esta información permite dirigir campañas promocionales enfocadas en cócteles y licores que puedan atraer a este grupo más joven.</p>
+</div>
+
+<!-- Consulta 14 -->
+<div class="consulta">
+    <h3>Consulta 14: Mujeres de igual o menos de 25 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ genero: 'F', edad: { $lte: 25 } });`</p>
+    <p><strong>Justificación:</strong> Conocer a las mujeres jóvenes que asisten al bar ayuda a dirigir promociones, eventos y productos especiales a este grupo, mejorando la retención de clientela y aumentando las visitas.</p>
+    
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta14_result1.png" alt="Resultado de la consulta 14 - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta14_result2.png" alt="Resultado de la consulta 14 - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta14_result3.png" alt="Resultado de la consulta 14 - Imagen 3" class="resultado-imagen">
+            <img src="img/consulta14_result4.png" alt="Resultado de la consulta 14 - Imagen 4" class="resultado-imagen">
+            <img src="img/consulta14_result5.png" alt="Resultado de la consulta 14 - Imagen 5" class="resultado-imagen">
+        </div>
+    </div>
+
+    <h4>Análisis del Resultado:</h4>
+    <p>Se identificaron 5 mujeres de 25 años o menos. Estas clientes representan un público joven que puede beneficiarse de promociones específicas como eventos dirigidos a mujeres jóvenes, descuentos en bebidas, y promociones de cocteles, incrementando la fidelización y frecuencia de visitas.</p>
+</div>
+
+    <h3>Consulta 15: Mujeres con más de 40 visitas</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ genero: 'F', numero_visitas: { $gt: 40 } });`</p>
+    <p><strong>Justificación:</strong> Conocer a las mujeres que frecuentan el bar más de 40 veces nos permite enfocarnos en retener su lealtad con promociones exclusivas, eventos personalizados, y recompensas especiales.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta15_result1.png" alt="Resultado de la consulta de mujeres con más de 40 visitas" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontró una cliente con más de 40 visitas, lo que indica una gran lealtad. Este tipo de clientes puede ser incentivado con ofertas VIP y promociones de fidelización para mantener su presencia en el bar.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 16: Hombres con más de 42 visitas</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ genero: 'M', numero_visitas: { $gt: 42 } });`</p>
+    <p><strong>Justificación:</strong> Identificar a los hombres que frecuentan el bar más de 42 veces nos permite reforzar las estrategias de fidelización, ya que estos clientes son clave para mantener el volumen de negocio. Podemos ofrecerles incentivos como descuentos en bebidas o promociones en eventos especiales para premiar su lealtad.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta16_result1.png" alt="Resultado de la consulta de hombres con más de 42 visitas - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta16_result2.png" alt="Resultado de la consulta de hombres con más de 42 visitas - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta16_result3.png" alt="Resultado de la consulta de hombres con más de 42 visitas - Imagen 3" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron tres hombres que han visitado el bar más de 42 veces. Estos clientes muestran un alto nivel de lealtad, lo que sugiere que son muy receptivos a las promociones de fidelización y eventos especiales. Recompensar su lealtad podría aumentar aún más la frecuencia de sus visitas y atraer a nuevos clientes a través de recomendaciones.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 17: VIP menores de 30 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _es_vip: true, _edad: { $lt: 30 } });`</p>
+    <p><strong>Justificación:</strong> Conocer cuántos clientes VIP son jóvenes puede ayudar a crear promociones orientadas hacia eventos exclusivos para una clientela más joven, incentivando su lealtad a largo plazo.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta17_result1.png" alt="Resultado de la consulta - VIP menor de 30 años - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta17_result2.png" alt="Resultado de la consulta - VIP menor de 30 años - Imagen 2" class="resultado-imagen">
+            <img src="img/consulta17_result3.png" alt="Resultado de la consulta - VIP menor de 30 años - Imagen 3" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 3 clientes VIP menores de 30 años. Este grupo puede ser clave para futuras promociones enfocadas en eventos exclusivos para una audiencia joven y activa, asegurando su fidelidad al bar a largo plazo. Se recomienda promover eventos sociales y exclusivos orientados a este segmento.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 18: Clientes con 40 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: { $eq: 40 } });`</p>
+    <p><strong>Justificación:</strong> Identificar clientes en la franja de edad de 40 años permite ofrecer promociones dirigidas a una audiencia madura, optimizando el enfoque de marketing.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta18_result1.png" alt="Resultado de la consulta - Cliente 1" class="resultado-imagen">
+            <img src="img/consulta18_result2.png" alt="Resultado de la consulta - Cliente 2" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 2 clientes de 40 años, Lucía y Andrés. Ambos han sido miembros por más de 3 años y tienen preferencias por bebidas premium como el Gin Tonic y Whisky. Para este grupo, podríamos crear ofertas especiales de bebidas premium y experiencias de bar personalizadas para aumentar su lealtad.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 19: Miembros desde "2019-08-20"</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _miembro_desde: { $eq: "2019-08-20" } });`</p>
+    <p><strong>Justificación:</strong> Identificar clientes que se unieron en una fecha específica puede ayudar a realizar análisis temporales sobre el crecimiento de la clientela o realizar campañas especiales para estos clientes.</p>
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta19_result1.png" alt="Resultado de la consulta - Miembro desde 2019-08-20" class="resultado-imagen">
+        </div>
+    </div>
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontró un miembro que se unió el 20 de agosto de 2019: **Diego**, un empresario de 34 años que tiene preferencias por cerveza y Nariño, y es cliente VIP con 27 visitas. Este cliente podría recibir una oferta especial de fidelización o eventos VIP.</p>
+</div>
+<div class="consulta">
+    <h3>Consulta 20: Clientes que tienen 43 años</h3>
+    <p><strong>Operación:</strong> `db.clandestino.find({ _edad: { $eq: 43 } });`</p>
+    <p><strong>Justificación:</strong> Identificar clientes jóvenes de 43 años permite ofrecer promociones enfocadas a su grupo de edad, ajustando los eventos y las bebidas preferidas para atraer a más clientes de esta franja.</p>
+    
+    <div class="resultados">
+        <div class="imagenes-resultados">
+            <img src="img/consulta20_result1.png" alt="Resultado de la consulta - Imagen 1" class="resultado-imagen">
+            <img src="img/consulta20_result2.png" alt="Resultado de la consulta - Imagen 2" class="resultado-imagen">
+        </div>
+    </div>
+
+    <h4>Análisis del Resultado:</h4>
+    <p>Se encontraron 2 clientes que tienen 43 años. Es relevante ofrecer promociones que atraigan a estos jóvenes a eventos especiales de su preferencia y aumentar su número de visitas.</p>
+</div>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Clandestino. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

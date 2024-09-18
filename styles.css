@@ -1,0 +1,643 @@
+
+/* Reseteo general y estructura básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que márgenes y padding no afecten el tamaño de los elementos */
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: #000000; /* Fondo negro */
+    color: #f6dd8a; /* Texto dorado */
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10; /* El encabezado estará siempre en la parte superior */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Centrar elementos verticalmente */
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #f6dd8a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    color: #b22222; /* Rojo oscuro al pasar el cursor */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-right: 20px; /* Espacio entre el logo y las pestañas de navegación */
+}
+
+/* Banner principal */
+#banner-principal {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 60% de la altura de la pantalla */
+    background-image: url('img/fondo.png'); /* Imagen de fondo del banner */
+    background-size: cover; /* La imagen cubre todo el banner */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2; /* El contenido está sobre la capa oscura */
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto; /* Ajustar la altura según el contenido */
+    margin: 20px auto;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%; /* Cada diapositiva ocupa el 100% del ancho */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Mantener proporciones sin recortar */
+}
+
+/* Botones de navegación del carrusel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicadores del carrusel */
+.indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Sección de productos destacados */
+#productos-destacados {
+    padding: 50px;
+    text-align: center;
+    background-color: #000000; /* Fondo negro */
+}
+
+#productos-destacados h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f6dd8a;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto img {
+    width: 150px;
+    height: auto;
+}
+
+.producto p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+/* Sección de contacto */
+#contacto {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+    background-image: url('img/fondo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#contacto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente sobre la imagen */
+    z-index: 1;
+}
+
+#contacto h2, #contacto form {
+    position: relative;
+    z-index: 2;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #b68c27;
+}
+
+
+/* Sección de productos destacados */
+#productos-destacados {
+    padding: 50px;
+    text-align: center;
+    background-color: #000000; /* Fondo negro */
+}
+
+#productos-destacados h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f6dd8a; /* Título dorado */
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid adaptable */
+    gap: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    width: 100%; /* Ajusta las imágenes al 100% del ancho */
+    height: auto; /* Mantiene las proporciones */
+    border-bottom: 1px solid #eee;
+}
+
+.producto p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.product-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.product-info button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+    background-color: #b68c27;
+}
+/* Sección de productos */
+#productos {
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+#productos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Grid responsivo */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para cada producto */
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.product-info button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+    background-color: #b68c27;
+}
+
+/* Sección de contacto */
+#contacto {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+#contacto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    z-index: 1;
+}
+
+#contacto h2, #contacto form {
+    position: relative;
+    z-index: 2;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #ecc957;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #b68c27;
+}
+
+/* Banner principal */
+#banner-sobre-nosotros {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-sobre-nosotros .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-sobre-nosotros h1 {
+    font-size: 3.5rem;
+}
+
+#banner-sobre-nosotros p {
+    font-size: 1.5rem;
+}
+
+/* Misión y Visión */
+#mision-vision {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #f8f9fa;
+}
+
+#mision-vision div {
+    width: 45%;
+    text-align: center;
+}
+
+#mision-vision img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#mision-vision h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#mision-vision p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Sección del equipo */
+#equipo {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#equipo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.equipo-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.miembro {
+    text-align: center;
+    width: 30%;
+}
+
+.miembro img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.miembro h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.miembro p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Sección de miembros */
+#miembros {
+    padding: 40px;
+    text-align: center;
+}
+
+.database-image img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+h1, h2, h3 {
+    color: #ecc957;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Consultas */
+.consulta {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consulta h3 {
+    color: #ecc957;
+    margin-bottom: 10px;
+}
+
+.consulta p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.consulta ul {
+    margin: 15px 0;
+}
+
+.resultados {
+    margin-top: 20px;
+}
+
+.resultados .imagenes-resultados {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.resultados .imagenes-resultados img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

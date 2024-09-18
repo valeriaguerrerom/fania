@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clandestino - Sobre Nosotros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div id="header"></div>
+        <script>
+        // Cargar el contenido de header.html dentro del div con id="header"
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+        </script>
+    </header> 
+
+     <!-- Sección principal con imagen de fondo -->
+     <section id="banner-sobre-nosotros">
+        <div class="banner-content">
+            <h1>Sobre Nosotros</h1>
+            <p>Un bar con historia, estilo y pasión por los cocteles.</p>
+        </div>
+    </section>
+
+    <!-- Misión y Visión con imágenes decorativas -->
+    <section id="mision-vision">
+        <div class="mision">
+            <img src="img/bar.webp" alt="Nuestra misión">
+            <h2>Misión</h2>
+            <p>Nuestra misión es ofrecer una experiencia inigualable a través de un ambiente sofisticado, bebidas de alta calidad y un servicio excepcional. Nos esforzamos por ser el destino preferido para aquellos que buscan disfrutar de buenos momentos en un entorno agradable.</p>
+        </div>
+        <div class="vision">
+            <img src="img/bar2.jpg" alt="Nuestra visión">
+            <h2>Visión</h2>
+            <p>Nos proyectamos como el bar de referencia en la ciudad, conocido por su innovación en bebidas importadas y su capacidad de crear momentos memorables para nuestros clientes, creciendo siempre con responsabilidad social y ambiental.</p>
+        </div>
+    </section>
+
+    <!-- Sección del equipo -->
+    <section id="equipo">
+        <h2>Nuestro Equipo</h2>
+        <div class="equipo-grid">
+            <div class="miembro">
+                <img src="img/vale.jpg" alt="Fundador">
+                <h3>Valeria Guerrero</h3>
+                <p>Fundador</p>
+            </div>
+            <div class="miembro">
+                <img src="img/ancizar.jpg" alt="Mesero">
+                <h3>Ancizar Castro</h3>
+                <p>Mesero</p>
+            </div>
+            <div class="miembro">
+                <img src="img/juan.jpg" alt="Encargado de Marketing">
+                <h3>Juan David Cuatindioy</h3>
+                <p>Encargado de Marketing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Clandestino. Todos los derechos reservados.</p>
+    </footer>
+</body>
+>>>>>>> 0a3101139f66e3bc63d893276ea421305d318c50
+</html>
