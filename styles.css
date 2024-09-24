@@ -51,6 +51,58 @@ nav ul li a:hover {
     display: block;
     margin-right: 20px; /* Espacio entre el logo y las pestañas de navegación */
 }
+/* Estilo básico para la barra de navegación */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f6dd8a;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+    display: none; /* Por defecto, el menú no se muestra */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+
+
+/* Mostrar el menú desplegable al hacer hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+/* Estilo del logo */
+.logo-item img {
+    width: 150px;
+}
 
 /* Banner principal */
 #banner-principal {
@@ -461,7 +513,7 @@ form button:hover {
     background-color: #b68c27;
 }
 
-/* Banner principal */
+/* Banner principal SOBRE NOSOTROS*/
 #banner-sobre-nosotros {
     background-image: url('img/fondo.png'); /* Imagen de fondo */
     background-size: cover;
@@ -484,6 +536,132 @@ form button:hover {
 }
 
 #banner-sobre-nosotros p {
+    font-size: 1.5rem;
+}
+
+/* Banner carros */
+#banner-carros {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-carros .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-carros h1 {
+    font-size: 3.5rem;
+}
+
+#banner-carros p {
+    font-size: 1.5rem;
+}
+/* Banner restaurante */
+#banner-restaurante {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-restaurante .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-restaurante h1 {
+    font-size: 3.5rem;
+}
+
+#banner-restaurante p {
+    font-size: 1.5rem;
+}
+/* Banner hoteles */
+#banner-hoteles {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-hoteles .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-hoteles h1 {
+    font-size: 3.5rem;
+}
+
+#banner-hoteles p {
+    font-size: 1.5rem;
+}
+/* Banner universidad */
+#banner-universidad {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-universidad .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-universidad h1 {
+    font-size: 3.5rem;
+}
+
+#banner-universidad p {
+    font-size: 1.5rem;
+}
+/* Banner mercado */
+#banner-mercado {
+    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+}
+
+#banner-mercado .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#banner-mercado h1 {
+    font-size: 3.5rem;
+}
+
+#banner-mercado p {
     font-size: 1.5rem;
 }
 
