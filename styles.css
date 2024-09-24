@@ -541,7 +541,7 @@ form button:hover {
 
 /* Banner carros */
 #banner-carros {
-    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-image: url('img/carros/fondoo.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
@@ -559,6 +559,7 @@ form button:hover {
 
 #banner-carros h1 {
     font-size: 3.5rem;
+    color: white;
 }
 
 #banner-carros p {
@@ -566,7 +567,7 @@ form button:hover {
 }
 /* Banner restaurante */
 #banner-restaurante {
-    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-image: url('img/restaurante/fondo2.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
@@ -584,6 +585,7 @@ form button:hover {
 
 #banner-restaurante h1 {
     font-size: 3.5rem;
+    color: white;
 }
 
 #banner-restaurante p {
@@ -591,7 +593,7 @@ form button:hover {
 }
 /* Banner hoteles */
 #banner-hoteles {
-    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-image: url('img/hoteles/fondo.jpeg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
@@ -609,6 +611,7 @@ form button:hover {
 
 #banner-hoteles h1 {
     font-size: 3.5rem;
+    color: white;
 }
 
 #banner-hoteles p {
@@ -616,7 +619,7 @@ form button:hover {
 }
 /* Banner universidad */
 #banner-universidad {
-    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-image: url('img/universidad/fondo.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
@@ -634,6 +637,7 @@ form button:hover {
 
 #banner-universidad h1 {
     font-size: 3.5rem;
+    color: white;
 }
 
 #banner-universidad p {
@@ -641,7 +645,7 @@ form button:hover {
 }
 /* Banner mercado */
 #banner-mercado {
-    background-image: url('img/fondo.png'); /* Imagen de fondo */
+    background-image: url('img/mercado/fondo.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: white;
@@ -659,6 +663,7 @@ form button:hover {
 
 #banner-mercado h1 {
     font-size: 3.5rem;
+    color: white;
 }
 
 #banner-mercado p {
