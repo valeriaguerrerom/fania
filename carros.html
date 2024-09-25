@@ -97,6 +97,10 @@
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
+            transition: transform 0.3s ease; /* Suaviza la animación */
+}
+        .car img:hover {
+            transform: scale(1.1); /* Agranda la imagen un 10% al hacer hover */
         }
 
         .car h3 {
@@ -285,9 +289,8 @@
 <div class="result" id="resultContainerNin"></div>
 
 <div id="command">
-    <h3>Consulta MongoDB utilizada:</h3>
     <div class="command-box">
-        <p style="font-size: 1.2em;">db.carros.find({ marca: { $in: ['Toyota', 'Honda'] } })</p>
+        <p style="font-size: 1.5em;">db.carros.find({ marca: { $in: ['Toyota', 'Honda'] } })</p>
     </div>
 </div>
 
@@ -299,9 +302,8 @@
 <div class="result" id="resultContainerIn"></div>
 
 <div id="command">
-    <h3>Consulta MongoDB utilizada:</h3>
     <div class="command-box">
-        <p style="font-size: 1.2em;">db.carros.find({ color: { $nin: ['Rojo', 'Negro', 'Blanco', 'Azul', 'Gris', 'Verde'] } })</p>
+        <p style="font-size: 1.5em;">db.carros.find({ color: { $nin: ['Rojo', 'Negro', 'Blanco', 'Azul', 'Gris', 'Verde'] } })</p>
     </div>
 </div>
 
@@ -313,9 +315,8 @@
 <div class="result" id="resultContainerNi"></div>
 
 <div id="command">
-    <h3>Consulta MongoDB utilizada:</h3>
     <div class="command-box">
-        <p style="font-size: 1.2em;">db.carros.find({ capacidad: { $lt: 3 }, color: 'Naranja', transmision: 'Automática' })</p>
+        <p style="font-size: 1.5em;">db.carros.find({ capacidad: { $lt: 3 }, color: 'Naranja', transmision: 'Automática' })</p>
     </div>
 </div>
 
@@ -327,9 +328,8 @@
 <div class="result" id="resultContainerCapaci"></div>
 
 <div id="command">
-    <h3>Comando MongoDB para eliminar:</h3>
     <div class="command-box">
-        <p style="font-size: 1.2em;">db.carros.deleteOne({ marca: 'Ferrari' })</p>
+        <p style="font-size: 1.5em;">db.carros.deleteOne({ marca: 'Ferrari' })</p>
         <p>Resultado: { acknowledged: true, deletedCount: 1 }</p>
     </div>
 </div>
