@@ -24,12 +24,106 @@
             <p>Explora el mundo con 40 hoteles, cada uno diseñado para ti.</p>
         </div>
     </section>
-        <!-- Lugar donde insertarás la imagen de la base de datos -->
-        <div class="database-image">
-            <!-- Inserta tu imagen aquí -->
-            <img src="img/database.png" alt="Base de Datos de Miembros">
-        </div>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Fondo oscuro */
+            color: #eaeaea; /* Texto claro */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
+        h1 {
+            color: #ecc957; /* Color dorado, estilo elegante */
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-size: 1.1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ecc957; /* Encabezados con color dorado */
+            color: #1a1a1a; /* Texto oscuro en encabezado */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            background-color: #2c2c2c; /* Fondo de las celdas */
+            border-bottom: 2px solid #ffffff; /* Líneas doradas entre filas */
+            color: #eaeaea;
+        }
+
+        tr:hover td {
+            background-color: #444; /* Efecto hover */
+        }
+
+        table caption {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Hacer la tabla responsiva */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 0.9em;
+            }
+
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <table id="excelTable">
+        <caption>Estudio de Mercado - Clientes Clandestino</caption>
+        <!-- Aquí se llenarán los datos de Excel -->
+    </table>
+
+    <!-- SheetJS (cargar desde CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script>
+        // Ruta del archivo Excel
+        const excelFile = 'data/mercado.xlsx'; // Cambia esto a la ubicación de tu archivo Excel
+
+        // Leer el archivo Excel y mostrarlo en la tabla
+        fetch(excelFile)
+            .then(res => res.arrayBuffer())
+            .then(data => {
+                const workbook = XLSX.read(data, { type: 'array' });
+                const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                const excelData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+                let table = '<tr>';
+                excelData[0].forEach(header => table += `<th>${header}</th>`);
+                table += '</tr>';
+
+                for (let i = 1; i < excelData.length; i++) {
+                    table += '<tr>';
+                    excelData[i].forEach(cell => table += `<td>${cell || ''}</td>`);
+                    table += '</tr>';
+                }
+
+                document.getElementById('excelTable').innerHTML = table;
+            })
+            .catch(err => console.log(err));
+    </script>
         <!-- A continuación, irán las operaciones y sus resultados -->
         <h2>Estudio de mercado mediante operadores de comparación</h2>
         <p>Aquí utilizamos varias consultas para analizar la información de nuestros clientes y optimizar futuras estrategias de marketing.</p>
