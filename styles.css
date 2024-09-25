@@ -786,19 +786,23 @@ h3 {
 .consulta h3 {
     color: #ecc957;
     margin-bottom: 10px;
+    padding: 20px;
 }
 
 .consulta p {
     color: #555;
     margin: 10px 0;
+    padding: 20px;
 }
 
 .consulta ul {
     margin: 15px 0;
+    padding: 20px;
 }
 
 .resultados {
     margin-top: 20px;
+    padding: 20px;
 }
 
 .resultados .imagenes-resultados {
@@ -806,6 +810,7 @@ h3 {
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .resultados .imagenes-resultados img {
@@ -813,6 +818,7 @@ h3 {
     height: auto;
     border-radius: 5px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 /* Pie de página */
 footer {
@@ -823,4 +829,5 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    padding: 20px;
 }
