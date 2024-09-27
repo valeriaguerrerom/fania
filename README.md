@@ -5,7 +5,7 @@ Welcome to the **Clandestino** Bar official website repository! This project sho
 
 ## 🌐 Live Preview
 
-You can visit the live version of the website here: [Clandestino Bar Website]https://valeriaguerrerom.github.io/fania/)
+You can visit the live version of the website here: [Clandestino Bar Website]https://valeriaguerrerom.github.io/fania/
 
 ---
 
